@@ -1,0 +1,108 @@
+:root {
+  --Color1: #f3f3f3;
+  --color2: #0766ad;
+  --color3: #29adb2;
+  --color4: #c5e898;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: calc(100vh - 20px);
+}
+
+.quiz-app {
+  background-color: var(--Color1);
+  margin: 2px auto;
+  width: 80%;
+  padding: 15px;
+  @media (max-width: 480px) {
+    & {
+      width: 100%;
+    }
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px 15px;
+    border-radius: 6px;
+    & span {
+      color: var(--color3);
+      font-weight: bold;
+    }
+  }
+  .question {
+    background-color: white;
+    padding: 20px 15px;
+    padding-bottom: 0;
+    border-radius: 6px 6px 0 0;
+    margin-top: 10px;
+  }
+  .answers {
+    background-color: white;
+    padding: 15px;
+    border-radius: 0 0 6px 6px;
+    .answer {
+      background-color: var(--Color1);
+      padding: 15px;
+      & input[type="Radio"]:checked + label {
+        color: var(--color3);
+      }
+    }
+    .answer:not(:last-child) {
+      border-bottom: 1px solid var(--color3);
+    }
+  }
+  .submit {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+    background-color: var(--color2);
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+    .bullets {
+      display: flex;
+      & span {
+        display: block;
+        background-color: var(--Color1);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+      & span.on {
+        background-color: var(--color2);
+      }
+    }
+  }
+  .result {
+    padding-top: 15px;
+    & span {
+      font-weight: bold;
+    }
+    .evaluation {
+      color: var(--color2);
+    }
+    .answered,
+    .from {
+      color: var(--color3);
+    }
+  }
+}
